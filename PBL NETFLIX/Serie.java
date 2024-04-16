@@ -56,7 +56,12 @@ public class Serie extends Midia {
     }
     public static void assistirSerie(List<Serie> series) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o nome da série: ");
+
+        System.out.println("Lista de séries disponíveis:");
+        for (Serie serie : series) {
+            System.out.println(serie.getNome());
+        }
+        System.out.println("\nDigite o nome da série que deseja assistir: ");
         String nome = scanner.nextLine();
 
         boolean encontrado = false;
