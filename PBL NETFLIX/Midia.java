@@ -76,9 +76,10 @@ public class Midia {
         return nome; // Retorna o nome da mídia
     }
 
-    public void dar_play() {
-        System.out.println("Vídeo está passando 😘❤️");
+    public static void dar_play(String nomeFilme) {
+        System.out.println(nomeFilme + " está passando 😘❤️");
     }
+
 
     public void pausar() {
         System.out.println("Vídeo pausado");
@@ -101,7 +102,12 @@ public class Midia {
 
     public static void assistirFilme(List<Midia> filmes) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o nome do filme");
+
+        System.out.println("Lista de filmes disponíveis:");
+        for (Midia filme : filmes) {
+            System.out.println(filme.getNome());
+        }
+        System.out.println("\nDigite o nome do filme que deseja assistir:");
         String nome = scanner.nextLine();
 
         boolean encontrado = false;
